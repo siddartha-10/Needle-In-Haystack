@@ -38,6 +38,19 @@ This project provides a Python module that extracts specific information (the "n
    ```bash
    python app.py
 
+## Example outputs Format
+```bash
+    {
+    "name": "Starwars Technologies",
+    "location": "Saturn",
+    "employee_count": 13000,
+    "founding_year": 20558,
+    "is_public": false,
+    "valuation": 6.0,
+    "primary_focus": "interstellar communication"
+  }
+```
+
 ## Video Explanation Link
    https://www.loom.com/share/456695bda6c34d9cbc2437a5a388a0ed?sid=271851df-bf11-4927-bd1a-4aeecb7da818
 
