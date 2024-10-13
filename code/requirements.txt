@@ -1,0 +1,9 @@
+numpy
+pydantic
+sentence-transformers
+langchain
+tqdm
+langchain_openai
+fiass-gpu
+pydantic
+numpy
