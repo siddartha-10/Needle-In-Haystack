@@ -43,8 +43,7 @@ This project provides a Python module that extracts specific information (the "n
 
 watch it the video in 1.5x or 2.0x
 
-
-## Code Explanation
+## Code Explanation in Few Sentences.
 Here is the basic overview of how the code works.
 
 ```bash
@@ -56,3 +55,6 @@ Here is the basic overview of how the code works.
     6. Process candidate sentences in parallel to extract data.
     7. Return a list of extracted data conforming to the schema.
     8. Generates a json and a csv file.
+```
+## Contact
+1) **Twitter** :- @Siddartha_10
