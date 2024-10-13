@@ -15,7 +15,7 @@ This project provides a Python module that extracts specific information (the "n
 - Python > 3.10
 - OpenAI API Key
   
-## Installation
+## Setup
 
 1. **Clone the Repository**
 
