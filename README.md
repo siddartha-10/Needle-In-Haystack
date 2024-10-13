@@ -39,11 +39,10 @@ This project provides a Python module that extracts specific information (the "n
    python app.py
 
 ## Video Explanation Link
-   ```bash
    https://www.loom.com/share/456695bda6c34d9cbc2437a5a388a0ed?sid=271851df-bf11-4927-bd1a-4aeecb7da818
 
-## Code Explanation
 
+## Code Explanation
 Here is the basic overview of how the code works.
 
 ```bash
