@@ -22,7 +22,7 @@ This project provides a Python module that extracts specific information (the "n
 1. **Clone the Repository**
 
    ```bash
-   git clone https://github.com/yourusername/needle-in-haystack.git
+   git clone https://github.com/siddartha-10/needle-in-haystack.git
    cd needle-in-haystack
 
 2. **Setup env variables**
