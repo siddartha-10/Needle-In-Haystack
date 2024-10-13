@@ -4,7 +4,7 @@ import numpy as np
 from typing import Type, List, TypeVar
 from pydantic import BaseModel
 from sentence_transformers import SentenceTransformer
-from langchain_openai import AzureChatOpenAI
+from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
 load_dotenv()
 
@@ -54,15 +54,7 @@ def extract_multi_needle(schema: Type[T], haystack: str, example_needles: List[s
     candidate_sentences = [sentences[idx] for idx in set(candidate_indices)]
 
     # Initialize the Azure OpenAI LLM model
-    model = AzureChatOpenAI(
-        openai_api_version=os.environ.get("AZURE_OPENAI_VERSION", "2023-03-15-preview"),
-        azure_deployment=os.environ.get("AZURE_OPENAI_DEPLOYMENT", "gpt-4o-mini"),
-        azure_endpoint=os.environ.get(
-            "AZURE_OPENAI_ENDPOINT",
-            "https://your-openai-endpoint.azure.com"
-        ),
-        openai_api_key=os.environ.get("AZURE_OPENAI_KEY", "api_key"),
-    )
+    model = ChatOpenAI(model = 'gpt-4o-mini')
 
     # Generate a description of the schema to include in the prompts
     schema_description = generate_schema_description(schema)

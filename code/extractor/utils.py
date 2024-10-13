@@ -7,7 +7,6 @@ import csv
 from typing import Type, List, TypeVar
 from pydantic import BaseModel
 from sentence_transformers import SentenceTransformer
-from langchain_openai import AzureChatOpenAI
 from langchain.schema import SystemMessage, HumanMessage
 from tqdm import tqdm  # For progress bar visualization
 

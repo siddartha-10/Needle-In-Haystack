@@ -1,0 +1,25 @@
+name,location,employee_count,founding_year,is_public,valuation,primary_focus
+Zenith Robotics,,,,,14.3,autonomous industrial machines and drones
+Elektra Corp,"Luna City, Moon",5000,,True,13.5,aerospace engineering
+Cyberion Systems,"Olympus Mons, Mars",6700,2050,True,12.9,quantum networking
+Elysium Labs,"San Francisco, Earth",5001,2086,False,7.2,time-travel technologies
+Ryoshi,"Neo Tokyo, Japan",1200,2031,False,8.7,quantum cryptography
+Orbitix Systems,"Europa Station, Jupiter",1900,2058,True,4.3,satellite manufacturing
+ChronosTech,"New Shanghai, Earth",2800,2077,True,6.2,time-manipulation devices
+StellarWave Technologies,"Enceladus Base, Saturn",1300,2055,False,6.0,interstellar communication
+Elysium Labs,"Vesper City, Venus",1050,2068,False,2.7,anti-gravity technologies
+Polaris Innovations,"Cloud City, Venus",1750,2035,False,,atmospheric energy harvesting
+Vortex AI,"Neo London, Earth",1100,2038,False,5.4,predictive algorithms for financial markets
+Quantum Forge,"Orion City, Earth",12500,2030,True,15.4,quantum computing
+Zenith Robotics,"Neo New York, Earth",10200,2027,True,,AI robotics
+ExoLab Solutions,"Borealis, Pluto",2400,2070,False,3.1,biotech research specializing in DNA alteration technology
+Titanium Core Solutions,"Terra Nova, Mars",9000,2049,True,11.7,asteroid mining technologies
+Hyperion Solutions,"Olympia, Mars",3200,2025,False,9.8,machine learning advancements
+Photonix Labs,"Solaris Base, Mercury",2100,2060,False,7.2,advanced photon-based computing systems
+Galactica Energy,"Ceres Station, Asteroid Belt",3600,2062,False,9.2,fusion power generation
+NeuraNet,"Atlantis City, Pacific Ocean",950,2022,False,2.6,neural interface technologies
+NeuraSynth,"Rhea City, Saturn",800,2048,False,2.1,synthetic neural tissue research
+Nexus Technologies,"Nova Tokyo, Earth",8000,2043,True,7.7,immersive VR experiences
+Cenara Industries,"Arcadia, Venus",7500,2065,False,10.1,renewable energy systems
+TetraSol,"Helios, Titan",4100,2080,True,8.3,solar energy solutions
+AstraCom,"Hyperion City, Jupiter",7800,2075,True,5.6,deep-space communication systems
