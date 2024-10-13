@@ -1,2 +1,2 @@
 # Needle In Haystack
- Technical assessment
+Given a large corpus of text, there are irrelevant
