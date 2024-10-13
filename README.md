@@ -9,8 +9,6 @@ This project provides a Python module that extracts specific information (the "n
 - **Embeddings for Similarity Matching**: Uses SentenceTransformer models to compute embeddings and identify sentences similar to the provided examples.
 - **Keyword Generation**: Dynamically generates keywords based on example needles and schema to enhance sentence selection.
 - **Parallel Processing**: Implements multithreading to process API calls concurrently, significantly improving performance.
-- **Schema-Based Extraction**: Utilizes Pydantic schemas to define the structure of the extracted data.
-- **Modular and Readable Code**: Organized into functions with clear comments for easy understanding and maintenance.
 
 ## Prerequisites
 
@@ -24,6 +22,7 @@ This project provides a Python module that extracts specific information (the "n
    ```bash
    git clone https://github.com/siddartha-10/needle-in-haystack.git
    cd needle-in-haystack
+   cd code
 
 2. **Setup env variables**
 
@@ -34,6 +33,15 @@ This project provides a Python module that extracts specific information (the "n
 
    ```bash
    pip install -r requirements.txt 
+
+4. **Run the code**
+   ```bash
+   python app.py
+
+
+## Video Explanation Link
+   ```bash
+   https://www.loom.com/share/456695bda6c34d9cbc2437a5a388a0ed?sid=271851df-bf11-4927-bd1a-4aeecb7da818
 
 ## Code Explanation
 
@@ -47,3 +55,4 @@ Here is the basic overview of how the code works.
     5. Find additional candidate sentences containing keywords.
     6. Process candidate sentences in parallel to extract data.
     7. Return a list of extracted data conforming to the schema.
+    8. Generates a json and a csv file.
