@@ -7,3 +7,4 @@ langchain_openai
 fiass-gpu
 pydantic
 numpy
+python-dotenv
