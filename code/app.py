@@ -9,7 +9,7 @@ def main():
     ]
 
     # Load the haystack text from a JSON file
-    with open('haystack.txt', 'r') as f:
+    with open('/Users/siddartha/Desktop/github/Needle-In-Haystack/haystack.txt', 'r') as f:
         haystack_text = f.read()
     # Run the extraction
     extracted_data = extract_multi_needle(schema=TechCompany, haystack=haystack_text, example_needles=example_needles)
