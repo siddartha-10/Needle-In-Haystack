@@ -21,13 +21,13 @@ def extract_multi_needle(schema: Type[T], haystack: str, example_needles: List[s
     Extracts information from a large text (haystack) based on example sentences (needles)
     and a defined schema. Returns a list of extracted data conforming to the schema.
     """
-    # Initialize the SentenceTransformer model for embeddings (fast and efficient)
+    # Sentence Transformer model used for computing embeddings
     embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
 
     # Split the haystack into individual sentences using regex
     sentences = re.split(r'(?<=[.!?])\s+', haystack)
 
-    # Compute embeddings for the sentences in the haystack
+    # Computing embeddings for the sentences
     sentence_embeddings = embedding_model.encode(
         sentences, batch_size=256, show_progress_bar=True
     )
@@ -37,29 +37,27 @@ def extract_multi_needle(schema: Type[T], haystack: str, example_needles: List[s
         example_needles, batch_size=256, show_progress_bar=True
     )
 
-    # Normalize embeddings to unit vectors for cosine similarity calculation
+    # Normalize embeddings for simple cosine similarity computation
     sentence_embeddings_normalized = sentence_embeddings / np.linalg.norm(sentence_embeddings, axis=1, keepdims=True)
     example_embeddings_normalized = example_embeddings / np.linalg.norm(example_embeddings, axis=1, keepdims=True)
 
-    # Compute cosine similarities between example needles and sentences
+    # Compute cosine similarities
     cosine_similarities = np.dot(example_embeddings_normalized, sentence_embeddings_normalized.T)
 
-    # Set a similarity threshold to select relevant sentences
-    similarity_threshold = 0.3  # Adjust this value as needed
+    # Setting a threshold for cosine similarity
+    similarity_threshold = 0.3
 
-    # Get indices of sentences that have similarity above the threshold
     candidate_indices = np.argwhere(cosine_similarities >= similarity_threshold)[:, 1]
 
     # Retrieve the candidate sentences based on the indices
     candidate_sentences = [sentences[idx] for idx in set(candidate_indices)]
 
-    # Initialize the Azure OpenAI LLM model
     model = ChatOpenAI(model = 'gpt-4o-mini')
 
-    # Generate a description of the schema to include in the prompts
+    # Generating the schema description
     schema_description = generate_schema_description(schema)
 
-    # Generate keywords using the LLM
+    # Generating keywords using the LLM
     keywords = generate_keywords(example_needles, schema_description, model)
 
     # Include sentences that contain any of the generated keywords
@@ -68,12 +66,11 @@ def extract_multi_needle(schema: Type[T], haystack: str, example_needles: List[s
         if any(keyword.lower() in sentence.lower() for keyword in keywords)
     ]
 
-    # Combine the candidate sentences from embeddings and keyword matching
+    # We want to include all candidate sentences and keyword sentences, because of the possibility of false negatives
     candidate_sentences = list(set(candidate_sentences).union(set(keyword_sentences)))
 
     print(f"Number of candidate sentences: {len(candidate_sentences)}")
 
-    # Construct the system prompt with schema description for the LLM
     system_prompt = f"""
 You are an assistant that extracts information from text according to a given schema.
 

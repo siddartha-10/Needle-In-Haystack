@@ -8,7 +8,7 @@ from typing import Type, List, TypeVar
 from pydantic import BaseModel
 from sentence_transformers import SentenceTransformer
 from langchain.schema import SystemMessage, HumanMessage
-from tqdm import tqdm  # For progress bar visualization
+from tqdm import tqdm
 
 T = TypeVar('T', bound=BaseModel)
 
@@ -29,7 +29,6 @@ def generate_keywords(example_needles: List[str], schema_description: str, model
     """
     Uses the LLM to generate a list of keywords based on the example needles and schema.
     """
-    # Construct a prompt for the LLM
     prompt = f"""Given the following schema and example needles, generate a list of keywords that would be useful for identifying relevant sentences in a text. The keywords should be related to the schema fields and the type of information we're looking for.
 
 Schema:
@@ -39,7 +38,7 @@ Example needles:
 {', '.join(example_needles)}
 
 Please provide a comma-separated list of approximately 10 keywords. These keywords should be closed words in English, i.e., there are needles present in the haystack which are structurally very similar to the example needles. Choose keywords that will help identify these other similar needles as well."""
-    # Create the conversation messages for the LLM
+
     messages = [
         SystemMessage(content="You are an assistant that extracts keywords from text."),
         HumanMessage(content=prompt)
@@ -63,13 +62,11 @@ def process_sentences_in_parallel(candidate_sentences: List[str], system_prompt:
 
     # Use ThreadPoolExecutor to process sentences concurrently
     with concurrent.futures.ThreadPoolExecutor() as executor:
-        # Submit tasks to the executor
         future_to_index = {
             executor.submit(process_sentence, index, text, system_prompt, model, schema): index
             for index, text in enumerate(candidate_sentences)
         }
 
-        # Process the futures as they complete
         for future in tqdm(concurrent.futures.as_completed(future_to_index),
                            total=len(candidate_sentences), desc="Processing Sentences"):
             index = future_to_index[future]
@@ -91,7 +88,6 @@ def process_sentence(index: int, text: str, system_prompt: str, model, schema: T
     Processes a single sentence using the LLM to extract information according to the schema.
     Returns an instance of the schema if data is extracted, or None otherwise.
     """
-    # Create the conversation messages for the LLM
     messages = [
         SystemMessage(content=system_prompt),
         HumanMessage(content=text)

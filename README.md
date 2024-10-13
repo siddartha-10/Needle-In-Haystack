@@ -14,7 +14,7 @@ This project provides a Python module that extracts specific information (the "n
 
 ## Prerequisites
 
-- Python 3.12
+- Python > 3.10
 - OpenAI API Key
   
 ## Installation

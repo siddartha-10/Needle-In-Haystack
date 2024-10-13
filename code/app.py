@@ -20,10 +20,8 @@ def main():
 
     print("\nExtraction complete. Results saved to 'extracted_needles.json'.")
 
-    # Optionally convert JSON to CSV
-    convert_to_csv = input("Do you want to convert the results to CSV? (y/n): ").strip().lower()
-    if convert_to_csv == 'y':
-        json_to_csv('extracted_needles.json', 'extracted_needles.csv')
+    # convert JSON to CSV
+    json_to_csv('extracted_needles.json', 'extracted_needles.csv')
 
 if __name__ == '__main__':
     main()
